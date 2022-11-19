@@ -14,7 +14,7 @@ public class DisjointSet {
 
     public void Fusionar(int n, int m) {
 
-        
+        //habria que ver la optimizacion de union por tamaño del arbol
         
     }
 
