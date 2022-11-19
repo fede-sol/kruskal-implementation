@@ -6,10 +6,10 @@ public class DisjointSet {
 
     public void Inicializar(int n) {
         array = new int[n];
+    }
 
-        for (int i = 0; i < n; i++) {
-            array[i] = -1;
-        }
+    public void Agregar(int n) {
+        array[n] = -1;
     }
 
     public void Fusionar(int n, int m) {
