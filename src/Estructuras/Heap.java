@@ -5,11 +5,7 @@ public class Heap implements HeapTDA{
 	private Arista[] heap;
 	private int cantNodos;
 	
-	public class Arista {
-		int destino;
-		int origen;
-		int peso;
-	}
+
 	
 	public void Inicializar(int n) {
 		heap = new Arista[n];
