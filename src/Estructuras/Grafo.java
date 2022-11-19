@@ -75,14 +75,17 @@ public class Grafo implements GrafoTDA {
 
 		Arista a;
 
-		for(int i = 0; i<mAdy.length; i++){
+		for(int i = 0; i<cantNodos; i++){
 			j = i;
-			while(j != mAdy.length){
-				a = new Arista();
-				a.origen = etiqs[i];
-				a.destino = etiqs[j];
-				a.peso = mAdy[i][j];
-				lista.add(a);
+			while(j < cantNodos){
+				if(mAdy[i][j] != 0){
+					
+					a = new Arista();
+					a.origen = etiqs[i];
+					a.destino = etiqs[j];
+					a.peso = mAdy[i][j];
+					lista.add(a);
+				}
 				j++;
 			}
 		}
@@ -96,6 +99,14 @@ public class Grafo implements GrafoTDA {
 		return(mAdy[o][d]!=0);
 	}
 
-	
+	public int[] vertices(){
+		return etiqs;
+
+	}
+
+	public int getCantidadVertices(){
+		return cantNodos;
+	}
+
 	
 }

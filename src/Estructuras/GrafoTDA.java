@@ -13,5 +13,7 @@ public interface GrafoTDA {
 	void eliminarArista(int v1,int v2);// Grafo inicializadoyexiste arista(v1,v2)
 	int pesoArista(int v1,int v2);// Grafo inicializadoyexiste arista(v1,v2)
 	ArrayList<Arista> aristas();// Grafo inicializado
+	int[] vertices();
 	boolean existeArista(int v1,int v2);// Grafo inicializado y existen nodos v1,v2
+	int getCantidadVertices();
 }
