@@ -3,13 +3,17 @@ package estructuras;
 public class DisjointSet implements DisjointSetTDA{
 
     private int[] array;
+    private int indice;
 
     public void Inicializar(int n) {
-        array = new int[n];
+        array = new int[n+1];
+        indice = 1;
+
     }
 
-    public void Agregar(int n) {
-        array[n] = -1;
+    public void Agregar() {
+        array[indice] = -1;
+        indice++;
     }
 
     public void Fusionar(int n, int m) {
@@ -17,16 +21,17 @@ public class DisjointSet implements DisjointSetTDA{
         n = Id(n);
         m = Id(m);
 
-        if(n == m)
-            return;
+        if(n != m){
 
-        if(array[n] < array[m]){
-            array[n] += array[m];
-            array[m] = n;
-        } else{
-            array[m] += array[n];
-            array[n] = m;
+            if(array[n] < array[m]){
+                array[n] += array[m];
+                array[m] = n;
+            } else{
+                array[m] += array[n];
+                array[n] = m;
+            }
         }
+        
         
     }
 
@@ -36,7 +41,7 @@ public class DisjointSet implements DisjointSetTDA{
             n = array[n]; //ahora paso a buscar la raiz del que estaba en la posicion n
             return Id(n); //para optimizar, todos apuntan a la raiz, cuando vuelva a buscar van a ser menos llamadas
         } else {
-            
+
             return n; //si tengo un nro negativo --> encontre el identificador
         }
 
