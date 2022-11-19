@@ -1,4 +1,4 @@
-package Estructuras;
+package estructuras;
 
 public class Heap implements HeapTDA{
 	

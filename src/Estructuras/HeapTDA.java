@@ -1,6 +1,6 @@
-package Estructuras;
+package estructuras;
 
-import Estructuras.Heap.Arista;
+import estructuras.Heap.Arista;
 
 public interface HeapTDA {
 	

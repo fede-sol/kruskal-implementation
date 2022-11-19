@@ -1,4 +1,4 @@
-package Estructuras;
+package estructuras;
 
 public class DisjointSet {
 
@@ -11,5 +11,7 @@ public class DisjointSet {
             array[i] = -1;
         }
     }
+    
+
     
 }
