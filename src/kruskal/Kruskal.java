@@ -49,6 +49,8 @@ public class Kruskal {
             
             if(arbol.Id(aux.origen) != arbol.Id(aux.destino)){
                 arbol.Fusionar(aux.origen, aux.destino);
+                aux.origen = vertices[aux.origen];
+                aux.destino = vertices[aux.destino];
                 aristasDelSpanningTree.add(aux);
             }
         }

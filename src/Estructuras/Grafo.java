@@ -81,8 +81,8 @@ public class Grafo implements GrafoTDA {
 				if(mAdy[i][j] != 0){
 					
 					a = new Arista();
-					a.origen = etiqs[i];
-					a.destino = etiqs[j];
+					a.origen = i;
+					a.destino = j;
 					a.peso = mAdy[i][j];
 					lista.add(a);
 				}
