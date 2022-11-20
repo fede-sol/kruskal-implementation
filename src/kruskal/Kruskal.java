@@ -2,12 +2,12 @@ package kruskal;
 
 import java.util.ArrayList;
 
-import estructuras.Arista;
-import estructuras.DisjointSet;
-import estructuras.DisjointSetTDA;
-import estructuras.GrafoTDA;
-import estructuras.Heap;
-import estructuras.HeapTDA;
+import estructuras.arista.Arista;
+import estructuras.disjointset.DisjointSet;
+import estructuras.disjointset.DisjointSetTDA;
+import estructuras.grafo.GrafoTDA;
+import estructuras.heap.Heap;
+import estructuras.heap.HeapTDA;
 
 public class Kruskal {
 

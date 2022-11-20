@@ -3,6 +3,9 @@ package ejecucion;
 import java.util.ArrayList;
 
 import estructuras.*;
+import estructuras.arista.Arista;
+import estructuras.grafo.Grafo;
+import estructuras.grafo.GrafoTDA;
 import kruskal.*;
 
 public class Ejecucion {

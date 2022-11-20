@@ -1,6 +1,8 @@
-package estructuras;
+package estructuras.grafo;
 
 import java.util.ArrayList;
+
+import estructuras.arista.Arista;
 
 public class Grafo implements GrafoTDA {
 
