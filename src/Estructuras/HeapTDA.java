@@ -4,7 +4,7 @@ package estructuras;
 
 public interface HeapTDA {
 	
-	void Inicializar(int n);
+	void Inicializar();
 	void Agregar(int origen, int destino, int peso);
 	Arista Sacar();
 

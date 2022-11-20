@@ -7,9 +7,9 @@ public class DisjointSet implements DisjointSetTDA{
     private int[] array;
     private int indice;
 
-    public void Inicializar(int n) {
-        array = new int[n+1];
-        indice = 1;
+    public void Inicializar() {
+        array = new int[100];
+        indice = 0;
     }
 
     public void Agregar() {
@@ -22,7 +22,7 @@ public class DisjointSet implements DisjointSetTDA{
         n = Id(n);
         m = Id(m);
 
-        if(n != m){
+        if(n != m){ //si no pertenecen al mismo arbol
 
             if(array[n] < array[m]){
                 array[n] += array[m];
@@ -40,10 +40,10 @@ public class DisjointSet implements DisjointSetTDA{
 
         ArrayList<Integer> recorrido = new ArrayList<>();
 
-        while(array[n] > 0) { //si tengo un nro POSITIVO --> sigo buscando
+        while(array[n] >= 0) { //si tengo un nro POSITIVO --> sigo buscando
             recorrido.add(n);
             n = array[n]; //ahora paso a buscar la raiz del que estaba en la posicion n
-        } 
+        }
 
 
         /*

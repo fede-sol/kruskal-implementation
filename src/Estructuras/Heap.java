@@ -7,8 +7,8 @@ public class Heap implements HeapTDA{
 	
 
 	
-	public void Inicializar(int n) {
-		heap = new Arista[n];
+	public void Inicializar() {
+		heap = new Arista[100];
 		cantNodos = 0;
 	}
 	

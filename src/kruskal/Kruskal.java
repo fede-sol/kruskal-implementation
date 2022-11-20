@@ -16,11 +16,11 @@ public class Kruskal {
     
     public static ArrayList<Arista> algoritmoKruskal(GrafoTDA g){
 
-        ArrayList<Arista> aristasDelGrafo = g.aristas();
+        ArrayList<Arista> aristasDelGrafo = g.aristas(); //Primero se consigue una lista de las aristas del grafo
 
         HeapTDA aristasOrdenadas = new Heap();
 
-        aristasOrdenadas.Inicializar(aristasDelGrafo.size());
+        aristasOrdenadas.Inicializar();
 
         for (Arista arista : aristasDelGrafo) 
             aristasOrdenadas.Agregar(arista.origen, arista.destino, arista.peso);
@@ -29,7 +29,7 @@ public class Kruskal {
         int[] vertices = g.vertices();
 
         DisjointSetTDA arbol = new DisjointSet();
-        arbol.Inicializar(g.getCantidadVertices());
+        arbol.Inicializar();
 
 
         
