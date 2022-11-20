@@ -10,7 +10,6 @@ public class DisjointSet implements DisjointSetTDA{
     public void Inicializar(int n) {
         array = new int[n+1];
         indice = 1;
-
     }
 
     public void Agregar() {
@@ -53,7 +52,7 @@ public class DisjointSet implements DisjointSetTDA{
          * Se recorre el camino realizado para llegar a la raiz cambiando el padre de cada nodo y asignandole la raiz como padre directo
          */
         int i = 0;
-
+        
         while(i < recorrido.size()){
             array[recorrido.get(i)] = n;
             i++;

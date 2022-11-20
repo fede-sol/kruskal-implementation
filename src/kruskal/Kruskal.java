@@ -33,7 +33,7 @@ public class Kruskal {
 
 
         
-        for(int i = 0; i<g.getCantidadVertices();i++)
+        for(int i = 0; i < g.getCantidadVertices(); i++) //agrega todos los vertices del grafo al arbol Disjoint Set
             arbol.Agregar();
         
         
@@ -42,13 +42,11 @@ public class Kruskal {
 
         Arista aux;
         
-        while(aristasDelSpanningTree.size() < g.getCantidadVertices()-1){
-            aux = aristasOrdenadas.Sacar();
+        while(aristasDelSpanningTree.size() < g.getCantidadVertices()-1){  //el ciclo termina cuando se llegue a n-1 aristas, siendo n la cantidad de vertices
+            aux = aristasOrdenadas.Sacar(); //la arista de menor costo
 
-
-            
-            if(arbol.Id(aux.origen) != arbol.Id(aux.destino)){
-                arbol.Fusionar(aux.origen, aux.destino);
+            if(arbol.Id(aux.origen) != arbol.Id(aux.destino)){ //si los nodos no pertenecen al mismo arbol, se agrega al 
+                arbol.Fusionar(aux.origen, aux.destino);       //arbol de recubrimiento minimo
                 aux.origen = vertices[aux.origen];
                 aux.destino = vertices[aux.destino];
                 aristasDelSpanningTree.add(aux);
