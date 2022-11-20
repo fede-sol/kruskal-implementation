@@ -1,5 +1,7 @@
 package estructuras;
 
+import java.util.ArrayList;
+
 public class DisjointSet implements DisjointSetTDA{
 
     private int[] array;
@@ -37,14 +39,27 @@ public class DisjointSet implements DisjointSetTDA{
 
     public int Id(int n) {
 
-        if(array[n] > 0) { //si tengo un nro POSITIVO --> sigo buscando
+        ArrayList<Integer> recorrido = new ArrayList<>();
+
+        while(array[n] > 0) { //si tengo un nro POSITIVO --> sigo buscando
+            recorrido.add(n);
             n = array[n]; //ahora paso a buscar la raiz del que estaba en la posicion n
-            return Id(n); //para optimizar, todos apuntan a la raiz, cuando vuelva a buscar van a ser menos llamadas
-        } else {
+        } 
 
-            return n; //si tengo un nro negativo --> encontre el identificador
+
+        /*
+         * Este bucle sirve para realizar la path compression que permite que la búsqueda sea de costo constante
+         *
+         * Se recorre el camino realizado para llegar a la raiz cambiando el padre de cada nodo y asignandole la raiz como padre directo
+         */
+        int i = 0;
+
+        while(i < recorrido.size()){
+            array[recorrido.get(i)] = n;
+            i++;
         }
-
+        
+        return n; //si tengo un nro negativo --> encontre el identificador
         
     }
     
