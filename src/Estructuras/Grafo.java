@@ -25,6 +25,8 @@ public class Grafo implements GrafoTDA {
 	   cantNodos ++;
 	}
 	
+
+	// Busca el indice del vertice
 	private int vert2Indice(int v){
 	   int i=cantNodos-1;
 	   
@@ -33,29 +35,21 @@ public class Grafo implements GrafoTDA {
 	   return i;
 	}
 	
-	public void eliminarVertice(int v){
-		   int ind= vert2Indice(v);
-		   
-		   for(int i=0;i<cantNodos;i++)
-		      mAdy[i][ind]=mAdy[i][cantNodos-1];
-		   
-		   for(int i=0;i<cantNodos;i++)
-		      mAdy[ind][i]=mAdy[cantNodos-1][i];
-		   
-		   etiqs[ind]=etiqs[cantNodos -1];
-		   cantNodos--;
-		             
-		}
+
 	public void agregarArista(int v1,int v2,int p){
 		  int o=vert2Indice(v1);
 		  int d=vert2Indice(v2);
-		  mAdy[o][d]=p;
+		  
+		  // Se agrega el peso de forma simétrica
+		  mAdy[o][d]=p; 
 		  mAdy[d][o]=p;
 	}
 		
 	public void eliminarArista(int v1,int v2){
 		  int o=vert2Indice(v1);
 		  int d=vert2Indice(v2);
+
+		   // Se quita el peso de forma simétrica
 		  mAdy[o][d]=0;
 		  mAdy[d][o]=0;
 	}
@@ -75,9 +69,10 @@ public class Grafo implements GrafoTDA {
 
 		Arista a;
 
+		//Recorre únicamente la mitad diagonal derecha de la matriz de adyacencia ya que es simétrica
 		for(int i = 0; i<cantNodos; i++){
 			j = i;
-			while(j < cantNodos){
+			while(j < cantNodos){ 
 				if(mAdy[i][j] != 0){
 					
 					a = new Arista();

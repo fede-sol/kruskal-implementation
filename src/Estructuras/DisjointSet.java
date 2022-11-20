@@ -19,14 +19,15 @@ public class DisjointSet implements DisjointSetTDA{
 
     public void Fusionar(int n, int m) {
 
-        n = Id(n);
+        // Se busca la raiz del arbol de cada nodo
+        n = Id(n); 
         m = Id(m);
 
         if(n != m){ //si no pertenecen al mismo arbol
 
-            if(array[n] < array[m]){
-                array[n] += array[m];
-                array[m] = n;
+            if(array[n] < array[m]){  // elige el arbol de mayor peso
+                array[n] += array[m]; // se suma el peso de un árbol a otro
+                array[m] = n;  // se cambia la raiz de un arbol por la del otro
             } else{
                 array[m] += array[n];
                 array[n] = m;

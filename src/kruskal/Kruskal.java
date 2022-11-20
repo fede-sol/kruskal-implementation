@@ -22,11 +22,12 @@ public class Kruskal {
 
         aristasOrdenadas.Inicializar();
 
-        for (Arista arista : aristasDelGrafo) 
+        for (Arista arista : aristasDelGrafo) // Se agregan las aristas al heap
             aristasOrdenadas.Agregar(arista.origen, arista.destino, arista.peso);
         
 
-        int[] vertices = g.vertices();
+        int[] vertices = g.vertices(); // Se guardan los vértices del grafo
+
 
         DisjointSetTDA arbol = new DisjointSet();
         arbol.Inicializar();
@@ -38,7 +39,7 @@ public class Kruskal {
         
         
 
-        ArrayList<Arista> aristasDelSpanningTree = new ArrayList<>();
+        ArrayList<Arista> aristasDelSpanningTree = new ArrayList<>(); // en esta variable se van a guardar las aristas seleccionadas por kruskal
 
         Arista aux;
         
@@ -46,9 +47,16 @@ public class Kruskal {
             aux = aristasOrdenadas.Sacar(); //la arista de menor costo
 
             if(arbol.Id(aux.origen) != arbol.Id(aux.destino)){ //si los nodos no pertenecen al mismo arbol, se agrega al 
+
                 arbol.Fusionar(aux.origen, aux.destino);       //arbol de recubrimiento minimo
-                aux.origen = vertices[aux.origen];
+
+                
+                /*
+                 * Se reescriben los identificadores de los vertices ya que hasta ahora se venia usando el índice
+                 */
+                aux.origen = vertices[aux.origen]; 
                 aux.destino = vertices[aux.destino];
+
                 aristasDelSpanningTree.add(aux);
             }
         }
