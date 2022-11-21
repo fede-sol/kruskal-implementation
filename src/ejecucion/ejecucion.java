@@ -7,7 +7,7 @@ import estructuras.grafo.Grafo;
 import estructuras.grafo.GrafoTDA;
 import kruskal.*;
 
-public class Ejecucion {
+public class ejecucion {
 
     static void imprimirAristas(ArrayList<Arista> l){
 
