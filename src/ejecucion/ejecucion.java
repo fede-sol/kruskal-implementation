@@ -24,7 +24,7 @@ public class Ejecucion {
          * 
          * Inicio de sección para crear grafos que sirvan para probar el algoritmo, no olvidar introducir el nombre del grafo creado en el método de kruskal
          * 
-         * Se dejan 3 grafos de prueba
+         * Se dejan 3 grafos de prueba, de los cuales hay representación gráfica en el anexo del informe
          * 
          */
         
